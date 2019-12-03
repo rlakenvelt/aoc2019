@@ -55,8 +55,9 @@ const wire1Coordinates = markGrid(wire1);
 const wire2Coordinates = markGrid(wire2);
 intersections = wire1Coordinates.filter(coordinate1 => { return wire2Coordinates.find(coordinate2 => coordinate1 === coordinate2)});
 distances = intersections.map((coordinate) => {
-    const values = coordinate.split(",");
-    return Math.abs(parseInt(values[0]) - 1) + Math.abs(parseInt(values[1]) - 1);
+    const distance1 = wire1Coordinates.indexOf(coordinate);
+    const distance2 = wire2Coordinates.indexOf(coordinate);
+    return distance1 + distance2 + 2;
 });
 console.log(distances.sort((a, b) => a-b)[0]);
 
