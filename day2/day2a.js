@@ -1,8 +1,8 @@
-const input = require('../input');
+const utils = require('../utils');
 
-const integers = input.getNumericInput(",");
+const integers = utils.getNumericInput(",");
 
-const handleOpCode = (instructionPointer) => {
+function handleOpCode (instructionPointer) {
     const opCode       = integers[instructionPointer];
     const parameter1   = integers[instructionPointer + 1];
     const parameter2   = integers[instructionPointer + 2];
@@ -21,6 +21,8 @@ const handleOpCode = (instructionPointer) => {
     return true;
 };
 
+utils.start("day 2A");
+
 integers[1] = 12;
 integers[2] = 2;
 
@@ -28,5 +30,6 @@ let stop = false;
 for (i = 0; i < integers.length && !stop; i+=4) { 
     stop = !handleOpCode(i);
 }
-console.log('ANSWER 2A:', integers[0]);
+utils.end(integers[0]);
+
 

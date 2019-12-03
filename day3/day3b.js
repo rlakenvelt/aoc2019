@@ -1,15 +1,11 @@
-const input = require('../input');
+const utils = require('../utils');
 
 
-const wires = input.getInput();
+const wires = utils.getInput();
 const wire1 = wires[0].split(",").map(x => x);
 const wire2 = wires[1].split(",").map(x => x);
 
-const coordinate = (x, y) => {
-    return x.toString() + "," + y.toString();
-}
-
-const getCoordinatesForWire = (wire) => {
+function getCoordinatesForWire (wire) {
     let x = 1;
     let y = 1;
     let locations = [];
@@ -37,7 +33,7 @@ const getCoordinatesForWire = (wire) => {
     return locations;
 }
 
-const start = new Date();
+utils.start("day 3B");
 const wire1Coordinates = getCoordinatesForWire(wire1);
 const wire2Coordinates = getCoordinatesForWire(wire2);
 
@@ -47,7 +43,5 @@ distances = intersections.map((coordinate) => {
     const distance2 = wire2Coordinates.indexOf(coordinate);
     return distance1 + distance2 + 2;
 });
-console.log(distances.sort((a, b) => a-b)[0]);
-const end = new Date();
-console.log(end - start, "ms");
+utils.end(distances.sort((a, b) => a-b)[0]);
 

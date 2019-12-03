@@ -1,12 +1,12 @@
-const input = require('../input');
+const utils = require('../utils');
 
-const masses = input.getNumericInput();
+const masses = utils.getNumericInput();
 
-const fuelForMass = (mass) => {
+function fuelForMass (mass) {
     return Math.floor(mass / 3) - 2;
 };
 
+utils.start("day 1A");
 const totalFuel = masses.map(mass => fuelForMass(mass)).reduce((total, mass) => total + mass, 0);
-
-console.log('ANSWER 1A:', totalFuel);
+utils.end(totalFuel);
 

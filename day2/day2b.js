@@ -1,8 +1,8 @@
-const input = require('../input');
+const utils = require('../utils');
 
 let integers = [];
 
-const handleOpCode = (instructionPointer) => {
+function handleOpCode (instructionPointer) {
     const opCode       = integers[instructionPointer];
     const parameter1   = integers[instructionPointer + 1];
     const parameter2   = integers[instructionPointer + 2];
@@ -21,8 +21,8 @@ const handleOpCode = (instructionPointer) => {
     return true;
 };
 
-const runProgram = (noun, verb) => {
-    integers = input.getNumericInput(",");
+function runProgram (noun, verb) {
+    integers = utils.getNumericInput(",");
     integers[1] = noun;
     integers[2] = verb;    
     let stop = false;
@@ -32,14 +32,13 @@ const runProgram = (noun, verb) => {
     return integers[0];
 }
 
+utils.start("day 2B");
 let stop = false;
 for (noun = 0; noun <=99 && !stop; noun++) { 
     for (verb = 0; verb <=99 && !stop; verb++) { 
         if (runProgram(noun, verb) === 19690720) {
-            console.log('ANSWER 2B:', noun, verb);
+            utils.end(noun * 100 + verb);
             stop = true;
         };    
     }     
 } 
-
-
