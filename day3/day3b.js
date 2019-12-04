@@ -37,7 +37,25 @@ utils.start("day 3B");
 const wire1Coordinates = getCoordinatesForWire(wire1);
 const wire2Coordinates = getCoordinatesForWire(wire2);
 
-intersections = wire1Coordinates.filter(coordinate1 => { return wire2Coordinates.find(coordinate2 => coordinate1 === coordinate2)});
+const sortedWire1Coordinates = [...wire1Coordinates].sort();
+const sortedWire2Coordinates = [...wire2Coordinates].sort();
+
+let firstIndex = 0;
+let intersections = [];
+for(i=0; i < sortedWire1Coordinates.length; i++) {
+    for(j=firstIndex; j < sortedWire2Coordinates.length; j++) {
+        if (sortedWire1Coordinates[i] < sortedWire2Coordinates[j]) {
+            firstIndex = j;
+            break;
+        }
+        if (sortedWire1Coordinates[i] === sortedWire2Coordinates[j]) {
+            firstIndex = j + 1;
+            intersections.push(sortedWire1Coordinates[i]);
+            break;
+        }
+    }
+    
+}
 distances = intersections.map((coordinate) => {
     const distance1 = wire1Coordinates.indexOf(coordinate);
     const distance2 = wire2Coordinates.indexOf(coordinate);
