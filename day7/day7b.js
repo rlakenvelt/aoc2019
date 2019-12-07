@@ -131,23 +131,24 @@ function outputForPhaseSequence(phaseSequence) {
     return lastOutput;
 }
 
+function createAmplifiers (number) {
+    let amp = []
+    for(i=0; i<number; i++) {
+        amp[i] = Object.create(amplifier);
+    }
+    return amp;
+}
 
 utils.start("day 7B");
 
-let amplifiers = [];
-let maxOutput = 0;
+let amplifiers = createAmplifiers(5);
 let answer = 0;
-
-for(i=0; i<5; i++) {
-    amplifiers[i] = Object.create(amplifier);
-}
 
 phaseSequencesFor([5, 6, 7, 8, 9]).forEach((phaseSequence) => {
     const output = outputForPhaseSequence(phaseSequence);
-    maxOutput = Math.max(output, maxOutput);
-
+    answer = Math.max(output, answer);
 });
-answer = maxOutput;
+
 utils.end(answer);
 
 
