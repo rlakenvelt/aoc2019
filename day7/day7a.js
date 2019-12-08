@@ -70,7 +70,6 @@ function handleAmplifier(sequence, inputSignal) {
     while (instruction >= 0) {
        instruction = handleOpCode(instruction);
     }
-    console.log("OUTPUT", output);
     return output;
 }
 
