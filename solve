@@ -1,0 +1,14 @@
+FILTER=$1
+if [ "$FILTER" == "" ]
+then
+    FILTER='day';
+fi
+for a in `find . -name "day*.js" | grep $FILTER | sort`
+do
+    FILENAME=`basename $a`
+    DIRNAME=`dirname $a`
+    #echo $FILENAME $DIRNAME
+    cd $DIRNAME
+    node $FILENAME
+    cd - > /dev/null
+done
