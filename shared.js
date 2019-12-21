@@ -154,6 +154,7 @@ handleOpCode() {
   run() {
       this.halted = false;
       this.wait   = false;
+      this.outputValues = [];
       while (!this.wait && !this.halted) {
           this.handleOpCode();
       }
