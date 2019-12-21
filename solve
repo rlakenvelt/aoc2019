@@ -1,9 +1,9 @@
 FILTER=$1
 if [ "$FILTER" == "" ]
 then
-    FILTER='day';
+    FILTER='';
 fi
-for a in `find . -name "day*.js" | grep $FILTER | sort`
+for a in `find . -name "day*.js" | grep day${FILTER}  | sort`
 do
     FILENAME=`basename $a`
     DIRNAME=`dirname $a`
