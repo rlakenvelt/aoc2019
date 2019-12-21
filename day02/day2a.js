@@ -1,6 +1,6 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
-const integers = utils.getNumericInput(",");
+const integers = shared.getNumericInput(",");
 
 function handleOpCode (instructionPointer) {
     const opCode       = integers[instructionPointer];
@@ -21,7 +21,7 @@ function handleOpCode (instructionPointer) {
     return true;
 };
 
-utils.start("day 2A");
+shared.start("day 2A");
 
 integers[1] = 12;
 integers[2] = 2;
@@ -30,6 +30,6 @@ let stop = false;
 for (i = 0; i < integers.length && !stop; i+=4) { 
     stop = !handleOpCode(i);
 }
-utils.end(integers[0]);
+shared.end(integers[0]);
 
 

@@ -1,6 +1,6 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
-const integers = utils.getNumericInput(",");
+const integers = shared.getNumericInput(",");
 
 let answer = 0;
 let output = 0;
@@ -91,7 +91,7 @@ function phaseSequencesFor(phases) {
     }, []);
 }
 
-utils.start("day 7A");
+shared.start("day 7A");
 
 let maxOutput = 0;
 phaseSequencesFor([0, 1, 2, 3, 4]).forEach((sequence) => {
@@ -99,6 +99,6 @@ phaseSequencesFor([0, 1, 2, 3, 4]).forEach((sequence) => {
     maxOutput = Math.max(answer, maxOutput);
 });
 answer = maxOutput;
-utils.end(answer);
+shared.end(answer);
 
 

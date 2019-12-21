@@ -1,6 +1,6 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
-const baseProgram = utils.getNumericInput(",");
+const baseProgram = shared.getNumericInput(",");
 
 const amplifier = {
     inputValues: [],
@@ -139,7 +139,7 @@ function createAmplifiers (number) {
     return amp;
 }
 
-utils.start("day 7B");
+shared.start("day 7B");
 
 let amplifiers = createAmplifiers(5);
 let answer = 0;
@@ -149,6 +149,6 @@ phaseSequencesFor([5, 6, 7, 8, 9]).forEach((phaseSequence) => {
     answer = Math.max(output, answer);
 });
 
-utils.end(answer);
+shared.end(answer);
 
 

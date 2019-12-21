@@ -1,6 +1,6 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
-const orbits = utils.getInput();
+const orbits = shared.getInput();
 let answer = 0;
 
 function countOrbits(object) {
@@ -11,7 +11,7 @@ function countOrbits(object) {
     return 0;
 }
 
-utils.start("day 6A");
+shared.start("day 6A");
 
 let objects = orbits.reduce((list, orbit) => {
     object = orbit.split(")");
@@ -27,5 +27,5 @@ answer = objects.reduce((total, object) => {
     return total;
 }, 0);
 
-utils.end(answer);
+shared.end(answer);
 

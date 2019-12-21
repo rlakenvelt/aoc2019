@@ -1,6 +1,6 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
-const range = utils.getNumericInput("-");
+const range = shared.getNumericInput("-");
 
 function checkPassword(password) {
     let double   = false;
@@ -12,7 +12,7 @@ function checkPassword(password) {
     }
     return increase && double;
 }
-utils.start("day 4A");
+shared.start("day 4A");
 
 let answer = 0;
 for(password=range[0]; password<=range[1]; password++) {
@@ -21,5 +21,5 @@ for(password=range[0]; password<=range[1]; password++) {
     }
 }
 
-utils.end(answer);
+shared.end(answer);
 

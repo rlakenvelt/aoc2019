@@ -1,4 +1,4 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
 let integers = [];
 
@@ -22,7 +22,7 @@ function handleOpCode (instructionPointer) {
 };
 
 function runProgram (noun, verb) {
-    integers = utils.getNumericInput(",");
+    integers = shared.getNumericInput(",");
     integers[1] = noun;
     integers[2] = verb;    
     let stop = false;
@@ -32,12 +32,12 @@ function runProgram (noun, verb) {
     return integers[0];
 }
 
-utils.start("day 2B");
+shared.start("day 2B");
 let stop = false;
 for (noun = 0; noun <=99 && !stop; noun++) { 
     for (verb = 0; verb <=99 && !stop; verb++) { 
         if (runProgram(noun, verb) === 19690720) {
-            utils.end(noun * 100 + verb);
+            shared.end(noun * 100 + verb);
             stop = true;
         };    
     }     

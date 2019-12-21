@@ -1,6 +1,6 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
-const orbits = utils.getInput();
+const orbits = shared.getInput();
 let answer = 0;
 
 function getOrbitPath(object) {
@@ -11,7 +11,7 @@ function getOrbitPath(object) {
     return [];
 }
 
-utils.start("day 6B");
+shared.start("day 6B");
 
 let objects = orbits.reduce((list, orbit) => {
     object = orbit.split(")");
@@ -31,5 +31,5 @@ getOrbitPath('YOU').every((youElement, index) => {
     return true;
 });
 
-utils.end(answer);
+shared.end(answer);
 

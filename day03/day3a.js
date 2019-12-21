@@ -1,6 +1,6 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
-const wires = utils.getInput();
+const wires = shared.getInput();
 const wire1 = wires[0].split(",").map(x => x);
 const wire2 = wires[1].split(",").map(x => x);
 
@@ -32,7 +32,7 @@ function getCoordinatesForWire (wire) {
     return locations;
 }
 
-utils.start("day 3A");
+shared.start("day 3A");
 const wire1Coordinates = getCoordinatesForWire(wire1);
 const wire2Coordinates = getCoordinatesForWire(wire2);
 const sortedWire1Coordinates = [...wire1Coordinates].sort();
@@ -59,5 +59,5 @@ distances = intersections.map((coordinate) => {
     const values = coordinate.split(",");
     return Math.abs(parseInt(values[0]) - 1) + Math.abs(parseInt(values[1]) - 1);
 });
-utils.end(distances.sort((a, b) => a-b)[0]);
+shared.end(distances.sort((a, b) => a-b)[0]);
 

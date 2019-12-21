@@ -1,6 +1,6 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
-const masses = utils.getNumericInput();
+const masses = shared.getNumericInput();
 
 function fuelForMass (mass, total) {
     const fuel = Math.floor(mass / 3) - 2;
@@ -8,8 +8,8 @@ function fuelForMass (mass, total) {
     return fuelForMass(fuel, total + fuel);
 };
 
-utils.start("day 1B");
+shared.start("day 1B");
 const totalFuel = masses.map(mass => fuelForMass(mass, 0)).reduce((total, mass) => total + mass, 0);
-utils.end(totalFuel);
+shared.end(totalFuel);
 
 

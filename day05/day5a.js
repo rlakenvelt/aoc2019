@@ -1,6 +1,6 @@
-const utils = require('../utils');
+const shared = require('../shared');
 
-const integers = utils.getNumericInput(",");
+const integers = shared.getNumericInput(",");
 
 let answer = 0;
 
@@ -33,12 +33,12 @@ function handleOpCode(instructionPointer) {
     return -1;
 };
 
-utils.start("day 5A");
+shared.start("day 5A");
 
 let instruction = 0
 while (instruction >= 0) {
    instruction = handleOpCode(instruction);
 }
 
-utils.end(answer);
+shared.end(answer);
 

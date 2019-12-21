@@ -1,5 +1,5 @@
-const utils = require('../utils');
-const input = utils.getNumericInput("");
+const shared = require('../shared');
+const input = shared.getNumericInput("");
 const imageSize = 25 * 6;
 
 function getLayers(list) {
@@ -12,7 +12,7 @@ function getLayers(list) {
 }
 
 
-utils.start("day 8A");
+shared.start("day 8A");
 
 const foundLayer = getLayers(input).reduce((min, layer, index) => {
     zerodigits = layer.filter(d => d === 0).length;
@@ -25,6 +25,6 @@ const foundLayer = getLayers(input).reduce((min, layer, index) => {
     return min;
 }, {layer: -1, zerodigits: -1});
 
-utils.end(foundLayer.onedigits * foundLayer.twodigits);
+shared.end(foundLayer.onedigits * foundLayer.twodigits);
 
 

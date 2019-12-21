@@ -1,5 +1,5 @@
-const utils = require('../utils');
-const input = utils.getNumericInput("");
+const shared = require('../shared');
+const input = shared.getNumericInput("");
 const imageSize = 25 * 6;
 
 function getLayers(list) {
@@ -32,8 +32,8 @@ function showImage (map) {
 }
 
 
-utils.start("day 8B");
+shared.start("day 8B");
 showImage(decodeImage(getLayers(input)));
-utils.end('See image above');
+shared.end('See image above');
 
 
