@@ -92,11 +92,11 @@ handleOpCode() {
           case 1:
               this.program[this.address(3)] = this.parameterValue(1) + this.parameterValue(2);
               this.instructionPointer += 4;
-              break;``
+              break;
           case 2:
               this.program[this.address(3)] = this.parameterValue(1) * this.parameterValue(2);
               this.instructionPointer += 4;
-              break;``
+              break;
           case 3:
               if (this.inputValues.length > 0) {
                   this.program[this.address(1)] = this.inputValues[0]; 

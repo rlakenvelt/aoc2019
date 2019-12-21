@@ -32,21 +32,21 @@ const amplifier = {
                 this.program[this.program[this.instructionPointer + 3]] = this.parameterValue(1, mode[0]) + 
                                                                           this.parameterValue(2, mode[1]);
                 this.instructionPointer += 4;
-                break;``
+                break;
             case 2:
                 this.program[this.program[this.instructionPointer + 3]] = this.parameterValue(1, mode[0]) * 
                                                                           this.parameterValue(2, mode[1]);
                 this.instructionPointer += 4;
-                break;``
+                break;
             case 3:
                 if (this.inputValues.length > 0) {
                     this.program[this.program[this.instructionPointer + 1]] = this.inputValues[0]; 
                     this.inputValues.shift();
                     this.instructionPointer += 2;
-                    break;``
+                    break;
                 }
                 this.wait = true;
-                break;``
+                break;
             case 4:
                 this.outputValue = this.parameterValue(1, mode[0]);
                 this.instructionPointer += 2;
