@@ -44,7 +44,7 @@ const intcodeComputer = {
       this.halted = false;
       this.relativeBase = 0;
   },
-  getOutputValue(inputSignal) {
+  getOutputValue() {
       return this.outputValues[this.outputValues.length - 1]
   },
   setInputValue(inputSignal) {
