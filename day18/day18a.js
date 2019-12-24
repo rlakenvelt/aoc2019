@@ -78,7 +78,7 @@ function findKeysAndDoors(grid, entrance) {
     return {keys: keys, doors: doors};
 }
 
-shared.start("day 15A");
+shared.start("day 18A");
 
 const grid = getGrid();
 const entrance = findEntrance(grid);
