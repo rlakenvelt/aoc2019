@@ -15,7 +15,7 @@ shared.start("day 19A");
 
 let computer = Object.create(shared.intcodeComputer);
 let answer = 0;
-let grid=[[]];
+let grid=[];
 
 for (let y=0; y<GRIDHEIGHT; y++) {
     const row=[];
@@ -33,7 +33,7 @@ for (let y=0; y<GRIDHEIGHT; y++) {
     }
     grid.push(row);
 }
-// showGrid(grid);
+showGrid(grid);
 
 shared.end(answer);
 
