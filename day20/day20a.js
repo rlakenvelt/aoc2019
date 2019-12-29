@@ -60,7 +60,7 @@ function getPortals() {
     });
     return portals;
 }
-function getNodes(grid) {
+function getNodes() {
     const nodes = [];
     const gridwidth=grid[0].length;
     const gridheight=grid.length;
@@ -151,7 +151,7 @@ function analyseNodes() {
 }
 
 
-function bfs(start, finish) { 
+function dijkstra(start, finish) { 
     const queue=[]; 
     nodes[start].costs = 0; 
     queue.push(nodes[start]);
@@ -182,7 +182,7 @@ shared.start("day 20A");
 
 const grid = getGrid();
 const portals = getPortals();
-const nodes = getNodes(grid);
+const nodes = getNodes();
 
 analyseNodes();
 
@@ -192,7 +192,7 @@ const exit = portals.find(portal=>portal.label==='ZZ');
 
 const exitNode = nodes.find(node=>node.x===exit.x&&node.y===exit.y);
 let answer=0;
-answer = bfs(nodes.indexOf(entranceNode), nodes.indexOf(exitNode));
+answer = dijkstra(nodes.indexOf(entranceNode), nodes.indexOf(exitNode));
 
 
 // showGrid(grid);
