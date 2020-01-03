@@ -32,7 +32,14 @@ function showGrid (grid) {
     })
 }
 
-
+function bugsInGrid (grid) {
+    return grid.reduce((total1, row) => {
+        total1+= row.reduce((total2, col) => {
+            return total2+=col;
+        }, 0);
+        return total1;
+    }, 0);
+}
 function emptyGrid(level) {
     return {level:level, new:true, tiles:newTiles()};
 }
@@ -40,11 +47,13 @@ function newTiles(level) {
     return [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
 }
 function findGrid(level) {
-    let grid=grids.find(grid=>{grid.level===level});
+    let grid=grids.find(grid=>{return grid.level===level});
     if (!grid) {
         grid=emptyGrid(level);
-        newgrids.push(grid);
-        calculateGrid(grid, true);
+        const newgrid=calculateGrid(grid, true);
+        if (!isEmpty(newgrid.tiles)) {
+            newgrids.push(newgrid);
+        }
     }
     return grid;
 }
@@ -54,14 +63,19 @@ function calculateGrids () {
         grid.new=false;
         newgrids.push(calculateGrid(grid, false));
     })
-
     return newgrids;
 }
-
+function isEmpty(grid) {
+    for (let row=0; row<GRIDHEIGHT; row++) {
+        for (let col=0; col<GRIDWIDTH; col++) {
+            if (grid[row][col]===1) return false;
+        }
+    }
+    return true;
+}
 
 function calculateGrid (grid, empty) {
     let newtiles = newTiles();
-    console.log('LEVEL', grid.level);
     let containingGrid;
     let recursiveGrid;
     if (!empty||grid.level>0) containingGrid=findGrid(grid.level-1);
@@ -69,31 +83,30 @@ function calculateGrid (grid, empty) {
     for (let row=0; row<GRIDHEIGHT; row++) {
         for (let col=0; col<GRIDWIDTH; col++) {
             newtiles[row][col]=grid.tiles[row][col];
-            const adjacent=movements.reduce((total, move) => {
+            let adjacent=movements.reduce((total, move) => {
                 const checkX=col+move.x;
                 const checkY=row+move.y;
-                // console.log('CHECK', checkX, checkY);
                 if (checkX===2&&checkY===2&&recursiveGrid) {
-                    if (col===1) total+=recursiveGrid.tiles[1][0]+
-                                        recursiveGrid.tiles[1][1]+
-                                        recursiveGrid.tiles[1][2]+
-                                        recursiveGrid.tiles[1][3]+
-                                        recursiveGrid.tiles[1][4];
-                    if (row===3) total+=recursiveGrid.tiles[3][0]+
-                                        recursiveGrid.tiles[3][1]+
-                                        recursiveGrid.tiles[3][2]+
-                                        recursiveGrid.tiles[3][3]+
-                                        recursiveGrid.tiles[3][4];
-                    if (row===1) total+=recursiveGrid.tiles[0][1]+
-                                        recursiveGrid.tiles[1][1]+
-                                        recursiveGrid.tiles[2][1]+
-                                        recursiveGrid.tiles[3][1]+
-                                        recursiveGrid.tiles[4][1];
-                    if (col===3) total+=recursiveGrid.tiles[0][3]+
-                                        recursiveGrid.tiles[1][3]+
-                                        recursiveGrid.tiles[2][3]+
-                                        recursiveGrid.tiles[3][3]+
-                                        recursiveGrid.tiles[4][3];
+                    if (row===1) total+=recursiveGrid.tiles[0][0]+
+                                        recursiveGrid.tiles[0][1]+
+                                        recursiveGrid.tiles[0][2]+
+                                        recursiveGrid.tiles[0][3]+
+                                        recursiveGrid.tiles[0][4];
+                    if (row===3) total+=recursiveGrid.tiles[4][0]+
+                                        recursiveGrid.tiles[4][1]+
+                                        recursiveGrid.tiles[4][2]+
+                                        recursiveGrid.tiles[4][3]+
+                                        recursiveGrid.tiles[4][4];
+                    if (col===1) total+=recursiveGrid.tiles[0][0]+
+                                        recursiveGrid.tiles[1][0]+
+                                        recursiveGrid.tiles[2][0]+
+                                        recursiveGrid.tiles[3][0]+
+                                        recursiveGrid.tiles[4][0];
+                    if (col===3) total+=recursiveGrid.tiles[0][4]+
+                                        recursiveGrid.tiles[1][4]+
+                                        recursiveGrid.tiles[2][4]+
+                                        recursiveGrid.tiles[3][4]+
+                                        recursiveGrid.tiles[4][4];
                 } else
                 if (checkY>=0&&checkX>=0&&checkY<GRIDHEIGHT&&checkX<GRIDWIDTH) {
                     if (grid.tiles[row+move.y][col+move.x]===1) {
@@ -101,33 +114,16 @@ function calculateGrid (grid, empty) {
                     }
                 } else 
                 if (containingGrid) {
-                    if (checkY<0) total+=containingGrid.tiles[1][0]+
-                                         containingGrid.tiles[1][1]+
-                                         containingGrid.tiles[1][2]+
-                                         containingGrid.tiles[1][3]+
-                                         containingGrid.tiles[1][4];
-                    if (checkY<GRIDHEIGHT) total+=containingGrid.tiles[3][0]+
-                                         containingGrid.tiles[3][1]+
-                                         containingGrid.tiles[3][2]+
-                                         containingGrid.tiles[3][3]+
-                                         containingGrid.tiles[3][4];
-                    if (checkX<0) total+=containingGrid.tiles[0][1]+
-                                         containingGrid.tiles[1][1]+
-                                         containingGrid.tiles[2][1]+
-                                         containingGrid.tiles[3][1]+
-                                         containingGrid.tiles[4][1];
-                    if (checkX<GRIDWIDTH) total+=containingGrid.tiles[0][3]+
-                                         containingGrid.tiles[1][3]+
-                                         containingGrid.tiles[2][3]+
-                                         containingGrid.tiles[3][3]+
-                                         containingGrid.tiles[4][3];
+                    if (checkY<0)          total+=containingGrid.tiles[1][2];
+                    if (checkY>=GRIDHEIGHT) total+=containingGrid.tiles[3][2];
+                    if (checkX<0)          total+=containingGrid.tiles[2][1];
+                    if (checkX>=GRIDWIDTH)  total+=containingGrid.tiles[2][3];
                 }
-                                         
                 return total;
             },0);
             if (grid.tiles[row][col]===1&&adjacent!==1) newtiles[row][col]=0;
             if (grid.tiles[row][col]===0&&adjacent>0&&adjacent<3) newtiles[row][col]=1;
-            // console.log('RC', col, row, grid.tiles[row][col], adjacent, newtiles[row][col]);
+            if (row===2&&col===2) newtiles[row][col]=0;
         }
     }
     return {level:grid.level, tiles:newtiles};
@@ -143,12 +139,14 @@ grids.push(startgrid);
 
 
 let answer=0;
-grids=calculateGrids();
-grids.forEach(grid=> {
-    showGrid(grid.tiles);
-    console.log('\n');
-})
-// showGrid(grid.grid);
+
+for (let minute=0; minute<200;minute++) {
+    grids=calculateGrids();
+}
+answer=grids.reduce((total, grid) => {
+    total+=bugsInGrid(grid.tiles);
+    return total;
+}, 0);
 shared.end(answer);
 
 
