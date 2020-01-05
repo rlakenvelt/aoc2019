@@ -25,7 +25,7 @@ function pushASCII(inputstring) {
     computer.setInputValue(10);
 }
 
-shared.start('day 21A');
+shared.start('day 21B');
 
 let computer = Object.create(shared.intcodeComputer);
 
@@ -49,7 +49,7 @@ pushASCII('AND D J');
 pushASCII('RUN');
 
 computer.run();
-showMemory(computer.outputValues);    
+// showMemory(computer.outputValues);    
 answer=computer.getOutputValue();                          
 
 shared.end(answer);

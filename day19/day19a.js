@@ -33,7 +33,7 @@ for (let y=0; y<GRIDHEIGHT; y++) {
     }
     grid.push(row);
 }
-showGrid(grid);
+// showGrid(grid);
 
 shared.end(answer);
 

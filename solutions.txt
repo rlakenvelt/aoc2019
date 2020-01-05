@@ -1,0 +1,261 @@
+---------------------
+Puzzle   : day 1A
+Answer   : 3367126
+Duration : 1 ms
+---------------------
+---------------------
+Puzzle   : day 1B
+Answer   : 5047796
+Duration : 0 ms
+---------------------
+---------------------
+Puzzle   : day 2A
+Answer   : 3058646
+Duration : 0 ms
+---------------------
+---------------------
+Puzzle   : day 2B
+Answer   : 8976
+Duration : 241 ms
+---------------------
+---------------------
+Puzzle   : day 3A
+Answer   : 386
+Duration : 317 ms
+---------------------
+---------------------
+Puzzle   : day 3B
+Answer   : 6484
+Duration : 360 ms
+---------------------
+---------------------
+Puzzle   : day 4A
+Answer   : 1330
+Duration : 138 ms
+---------------------
+---------------------
+Puzzle   : day 4B
+Answer   : 876
+Duration : 151 ms
+---------------------
+---------------------
+Puzzle   : day 5A
+Answer   : 12896948
+Duration : 0 ms
+---------------------
+---------------------
+Puzzle   : day 5B
+Answer   : 7704130
+Duration : 0 ms
+---------------------
+---------------------
+Puzzle   : day 6A
+Answer   : 130681
+Duration : 461 ms
+---------------------
+---------------------
+Puzzle   : day 6B
+Answer   : 313
+Duration : 24 ms
+---------------------
+---------------------
+Puzzle   : day 7A
+Answer   : 8456262
+Duration : 1 ms
+---------------------
+---------------------
+Puzzle   : day 7B
+Answer   : 63103596
+Duration : 23 ms
+---------------------
+---------------------
+Puzzle   : day 8A
+Answer   : 1690
+Duration : 2 ms
+---------------------
+1111 111  1111 1  1 111  
+   1 1  1    1 1  1 1  1 
+  1  1  1   1  1  1 111  
+ 1   111   1   1  1 1  1 
+1    1    1    1  1 1  1 
+1111 1    1111  11  111  
+---------------------
+Puzzle   : day 8B
+Answer   : See image above
+Duration : 4 ms
+---------------------
+---------------------
+Puzzle   : day 9A
+Answer   : 2738720997
+Duration : 1 ms
+---------------------
+---------------------
+Puzzle   : day 9B
+Answer   : 50894
+Duration : 173 ms
+---------------------
+---------------------
+Puzzle   : day 10A
+Answer   : 319
+Duration : 137 ms
+---------------------
+---------------------
+Puzzle   : day 10B
+Answer   : 517
+Duration : 142 ms
+---------------------
+---------------------
+Puzzle   : day 11A
+Answer   : 2184
+Duration : 109 ms
+---------------------
+                 ##  #  #  ##  #  # #### #### ###  #  #  
+                #  # #  # #  # #  #    # #    #  # # #    
+                #  # #### #    ####   #  ###  #  # ##     
+                #### #  # #    #  #  #   #    ###  # #   
+                #  # #  # #  # #  # #    #    #    # #  
+                #  # #  #  ##  #  # #### #### #    #  # 
+---------------------
+Puzzle   : day 11B
+Answer   : See image above
+Duration : 20 ms
+---------------------
+---------------------
+Puzzle   : day 12A
+Answer   : 7988
+Duration : 4 ms
+---------------------
+---------------------
+Puzzle   : day 12B
+Answer   : 337721412394184
+Duration : 82 ms
+---------------------
+---------------------
+Puzzle   : day 13A
+Answer   : 380
+Duration : 25 ms
+---------------------
+---------------------
+Puzzle   : day 13B
+Answer   : 18647
+Duration : 310 ms
+---------------------
+---------------------
+Puzzle   : day 14A
+Answer   : 301997
+Duration : 1 ms
+---------------------
+---------------------
+Puzzle   : day 14B
+Answer   : 6216589
+Duration : 578 ms
+---------------------
+---------------------
+Puzzle   : day 15A
+Answer   : 366
+Duration : 44 ms
+---------------------
+---------------------
+Puzzle   : day 15B
+Answer   : 384
+Duration : 220 ms
+---------------------
+---------------------
+Puzzle   : day 16A
+Answer   : 68764632
+Duration : 956 ms
+---------------------
+---------------------
+Puzzle   : day 16B
+Answer   : 52825021
+Duration : 5616 ms
+---------------------
+---------------------
+Puzzle   : day 17A
+Answer   : 1544
+Duration : 35 ms
+---------------------
+---------------------
+Puzzle   : day 17B
+Answer   : 696373
+Duration : 92 ms
+---------------------
+---------------------
+Puzzle   : day 19A
+Answer   : 181
+Duration : 439 ms
+---------------------
+---------------------
+Puzzle   : day 19B
+Answer   : 4240964
+Duration : 14023 ms
+---------------------
+---------------------
+Puzzle   : day 20A
+Answer   : 690
+Duration : 72 ms
+---------------------
+---------------------
+Puzzle   : day 20B
+Answer   : 7976
+Duration : 14541 ms
+---------------------
+---------------------
+Puzzle   : day 21A
+Answer   : 10
+Duration : 22 ms
+---------------------
+---------------------
+Puzzle   : day 21B
+Answer   : 1136394042
+Duration : 467 ms
+---------------------
+---------------------
+Puzzle   : day 22A
+Answer   : 3324
+Duration : 22 ms
+---------------------
+---------------------
+Puzzle   : day 22B
+Answer   : 82588610895146
+Duration : 0 ms
+---------------------
+---------------------
+Puzzle   : day 23A
+Answer   : 15416
+Duration : 26 ms
+---------------------
+---------------------
+Puzzle   : day 23A
+Answer   : 10946
+Duration : 103 ms
+---------------------
+---------------------
+Puzzle   : day 24A
+Answer   : 18371095
+Duration : 1 ms
+---------------------
+---------------------
+Puzzle   : day 24B
+Answer   : 2075
+Duration : 99 ms
+---------------------
+
+
+
+== Pressure-Sensitive Floor ==
+Analyzing...
+
+Doors here lead:
+- south
+
+A loud, robotic voice says "Analysis complete! You may proceed." and you enter the cockpit.
+Santa notices your small droid, looks puzzled for a moment, realizes what has happened, and radios your ship directly.
+"Oh, hello! You should be able to get in by typing 1109393410 on the keypad at the main airlock."
+
+Used combination of inventory items to get the right weight: [ 'monolith', 'astrolabe', 'planetoid', 'fuel cell' ]
+---------------------
+Puzzle   : day 25A
+Answer   : See game output above
+Duration : 4087 ms
+---------------------

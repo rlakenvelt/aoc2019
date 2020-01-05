@@ -19,7 +19,9 @@ function showGrid (grid) {
     rows.forEach((row, index) => {
         let showrow = row.join('');
         showrow = showrow.replace(/\./g, ' ');
-        console.log(showrow);
+        checkrow = showrow.replace(/ /g, '');
+        if (checkrow!='')
+            console.log(showrow);
     })
 }
 

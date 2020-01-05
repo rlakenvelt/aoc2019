@@ -109,6 +109,6 @@ if (automated==='y') {
     }
 }
 
-shared.end(answer);
+shared.end('See game output above');
 
 

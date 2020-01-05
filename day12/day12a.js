@@ -64,7 +64,7 @@ const answer = moons.reduce((total, moon) => {
     total += calculateEnergy(moon);
     return total;
 }, 0);
-console.log(moons);
+// console.log(moons);
 
 shared.end(answer);
 

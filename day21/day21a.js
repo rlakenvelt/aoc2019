@@ -40,7 +40,7 @@ pushASCII('AND D J');
 pushASCII('WALK');
 
 computer.run();
-showMemory(computer.outputValues);    
+// showMemory(computer.outputValues);    
 answer=computer.getOutputValue();                          
 
 shared.end(answer);

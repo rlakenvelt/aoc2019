@@ -20,7 +20,6 @@ shared.start("day 10B");
 let asteroids = getAsteroids();
 
 function calculategrid(ims) {
-    console.log("IMS", ims);
     asteroids.forEach(asteroid => {
         asteroid.detects=0;
         if (!ims || (asteroid.x === ims.x && asteroid.y === ims.y)) {
